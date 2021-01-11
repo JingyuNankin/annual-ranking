@@ -18,7 +18,7 @@ for index, row in df.iterrows():
     draw = ImageDraw.Draw(img)
 
     #标题
-    font_path = font_folder_path + r'\SourceHanSansCN-Bold.otf' #思源宋体 粗
+    font_path = font_folder_path + r'\SourceHanSansCN-Bold.otf' #思源黑体 粗
     font = ImageFont.truetype(font = font_path, size = 60) #调整字体大小
     title = row['title']
     length, hight = draw.textsize(str(title), font)
@@ -51,7 +51,7 @@ for index, row in df.iterrows():
         draw.text((1900 - length, 311), rank, font = font, fill = (255,255,255)) 
 
     #BV号、时间、UP主
-    font_path = font_folder_path + r'\SourceHanSansCN-Normal.otf' #思源宋体 普通
+    font_path = font_folder_path + r'\SourceHanSansCN-Normal.otf' #思源黑体 普通
     font = ImageFont.truetype(font = font_path, size = 32) #调整字体大小
     stringDate = str(row['pubdate'])
     draw.text((40, 108), row['bid'], font = font, fill = (255,255,255)) 
@@ -75,7 +75,7 @@ for index, row in df.iterrows():
     draw.text((1880 - length, 645 + 90 * 4), str(likePoint), font = font, fill = (255,255,255)) 
 
     #得分
-    font_path = font_folder_path + r'\SourceHanSansCN-Bold.otf' #思源宋体 粗
+    font_path = font_folder_path + r'\SourceHanSansCN-Bold.otf' #思源黑体 粗
     font = ImageFont.truetype(font = font_path, size = 48)
     point = str(row['view'] + favoPoint + likePoint) #分数现场计算
     length, hight = draw.textsize(point, font)
